@@ -41,12 +41,13 @@ Get-AppxPackage -AllUsers -Name *Cortana* | Remove-AppxPackage
 Get-AppxPackage -AllUsers -Name *MSPaint* | Remove-AppxPackage
 Get-AppxPackage -AllUsers -Name *YourPhone* | Remove-AppxPackage
 Get-AppxPackage -AllUsers -Name *Microsoft.People* | Remove-AppxPackage
+Get-AppxPackage -AllUsers -Name *BingWeather* | Remove-AppxPackage
 
 
 Write-Host "GOTOWE!" -BackgroundColor DarkBlue -ForegroundColor White
 write-host "`n"
 Write-Host "POZOSTALE:" -BackgroundColor DarkBlue -ForegroundColor White
 write-host "`n"
-Get-AppXProvisionedPackage -Online | Select-Object PackageName
+Get-AppxPackage -AllUsers | Select-Object Name
 
 pause
