@@ -1,10 +1,3 @@
-#usuwa pakiety provisoned (te na przynete w START)
-Get-AppXProvisionedPackage -Online | Remove-AppxProvisionedPackage -Online
-
-
-Write-Host "TRWA USUWANIE NIEPOTRZEBNYCH APLIKACJI.." -BackgroundColor DarkBlue -ForegroundColor White
-write-host "`n"
-
 Get-AppxPackage -AllUsers -Name *BingNews* | Remove-AppxPackage
 Get-AppxPackage -AllUsers -Name *GetHelp* | Remove-AppxPackage
 Get-AppxPackage -AllUsers -Name *Getstarted* | Remove-AppxPackage
@@ -28,26 +21,28 @@ Get-AppxPackage -AllUsers -Name *WindowsFeedbackHub* | Remove-AppxPackage
 Get-AppxPackage -AllUsers -Name *WindowsMaps* | Remove-AppxPackage
 Get-AppxPackage -AllUsers -Name *WindowsSoundRecorder* | Remove-AppxPackage
 Get-AppxPackage -AllUsers -Name *XboxApp* | Remove-AppxPackage
+Get-AppxPackage -AllUsers -Name *XboxGameOverlay* | Remove-AppxPackage
 Get-AppxPackage -AllUsers -Name *XboxIdentityProvider* | Remove-AppxPackage
 Get-AppxPackage -AllUsers -Name *XboxSpeechToTextOverlay* | Remove-AppxPackage
+Get-AppxPackage -AllUsers -Name *XboxGamingOverlay* | Remove-AppxPackage
+Get-AppxPackage -AllUsers -Name *Microsoft.Xbox.TCUI* | Remove-AppxPackage
 Get-AppxPackage -AllUsers -Name *ZuneMusic* | Remove-AppxPackage
 Get-AppxPackage -AllUsers -Name *ZuneVideo* | Remove-AppxPackage 
 Get-AppxPackage -AllUsers -Name *StorePurchaseApp* | Remove-AppxPackage
 Get-AppxPackage -AllUsers -Name *Paint3D* | Remove-AppxPackage
 Get-AppxPackage -AllUsers -Name *MicrosoftStickyNotes* | Remove-AppxPackage
 Get-AppxPackage -AllUsers -Name *MixedReality.Portal * | Remove-AppxPackage
-#Get-AppxPackage -AllUsers -Name *Windows.Photos* | Remove-AppxPackage
 Get-AppxPackage -AllUsers -Name *Cortana* | Remove-AppxPackage
 Get-AppxPackage -AllUsers -Name *MSPaint* | Remove-AppxPackage
 Get-AppxPackage -AllUsers -Name *YourPhone* | Remove-AppxPackage
 Get-AppxPackage -AllUsers -Name *Microsoft.People* | Remove-AppxPackage
 Get-AppxPackage -AllUsers -Name *BingWeather* | Remove-AppxPackage
+Get-AppxPackage -AllUsers -Name *Todos* | Remove-AppxPackage
+Get-AppxPackage -AllUsers -Name *WindowsAlarms* | Remove-AppxPackage
+Get-AppxPackage -AllUsers -Name *MicrosoftTeams* | Remove-AppxPackage
 
 
 Write-Host "GOTOWE!" -BackgroundColor DarkBlue -ForegroundColor White
-write-host "`n"
-Write-Host "POZOSTALE:" -BackgroundColor DarkBlue -ForegroundColor White
-write-host "`n"
-Get-AppxPackage -AllUsers | Select-Object Name
-
 pause
+
+#Get-AppxPackage -AllUsers | Select-Object Name | Out-File -FilePath "~\Desktop\APPX.txt"
