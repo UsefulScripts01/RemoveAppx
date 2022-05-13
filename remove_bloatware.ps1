@@ -54,4 +54,3 @@ Get-AppxPackage -AllUsers -Name *MicrosoftTeams* | Remove-AppxPackage
 Write-Host "GOTOWE!" -BackgroundColor DarkBlue -ForegroundColor White
 pause
 
-#Get-AppxPackage -AllUsers | Select-Object Name | Out-File -FilePath "~\Desktop\APPX.txt"
