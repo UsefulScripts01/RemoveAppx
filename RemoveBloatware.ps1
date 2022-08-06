@@ -1,48 +1,66 @@
+function Remove-Bloatware {
+    Get-Item -Path "HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion\Appx\AppxAllUserStore\Applications\Microsoft.BingWeather*" | Remove-Item -Recurse -Force
+    Get-Item -Path "HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion\Appx\AppxAllUserStore\Applications\Microsoft.GetHelp*" | Remove-Item -Recurse -Force
+    Get-Item -Path "HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion\Appx\AppxAllUserStore\Applications\Microsoft.Getstarted*" | Remove-Item -Recurse -Force
+    Get-Item -Path "HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion\Appx\AppxAllUserStore\Applications\Microsoft.Microsoft3DViewer*" | Remove-Item -Recurse -Force
+    Get-Item -Path "HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion\Appx\AppxAllUserStore\Applications\Microsoft.MicrosoftOfficeHub*" | Remove-Item -Recurse -Force
+    Get-Item -Path "HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion\Appx\AppxAllUserStore\Applications\Microsoft.MicrosoftSolitaireCollection*" | Remove-Item -Recurse -Force
+    #HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion\Appx\AppxAllUserStore\Applications\Microsoft.MicrosoftStickyNotes*" | Remove-Item -Recurse -Force
+    Get-Item -Path "HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion\Appx\AppxAllUserStore\Applications\Microsoft.MixedReality.Portal*" | Remove-Item -Recurse -Force
+    Get-Item -Path "HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion\Appx\AppxAllUserStore\Applications\Microsoft.MSPaint*" | Remove-Item -Recurse -Force
+    Get-Item -Path "HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion\Appx\AppxAllUserStore\Applications\Microsoft.Office.OneNote*" | Remove-Item -Recurse -Force
+    Get-Item -Path "HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion\Appx\AppxAllUserStore\Applications\Microsoft.People*" | Remove-Item -Recurse -Force
+    Get-Item -Path "HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion\Appx\AppxAllUserStore\Applications\Microsoft.SkypeApp*" | Remove-Item -Recurse -Force
+    Get-Item -Path "HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion\Appx\AppxAllUserStore\Applications\Microsoft.StorePurchaseApp*" | Remove-Item -Recurse -Force
+    Get-Item -Path "HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion\Appx\AppxAllUserStore\Applications\Microsoft.Wallet*" | Remove-Item -Recurse -Force
+    Get-Item -Path "HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion\Appx\AppxAllUserStore\Applications\Microsoft.WindowsAlarms*" | Remove-Item -Recurse -Force
+    Get-Item -Path "HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion\Appx\AppxAllUserStore\Applications\Microsoft.WindowsCamera*" | Remove-Item -Recurse -Force
+    Get-Item -Path "HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion\Appx\AppxAllUserStore\Applications\microsoft.windowscommunicationsapps*" | Remove-Item -Recurse -Force
+    Get-Item -Path "HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion\Appx\AppxAllUserStore\Applications\Microsoft.WindowsFeedbackHub*" | Remove-Item -Recurse -Force
+    Get-Item -Path "HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion\Appx\AppxAllUserStore\Applications\Microsoft.WindowsMaps*" | Remove-Item -Recurse -Force
+    Get-Item -Path "HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion\Appx\AppxAllUserStore\Applications\Microsoft.WindowsSoundRecorder*" | Remove-Item -Recurse -Force
+    Get-Item -Path "HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion\Appx\AppxAllUserStore\Applications\Microsoft.Xbox.TCUI*" | Remove-Item -Recurse -Force
+    Get-Item -Path "HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion\Appx\AppxAllUserStore\Applications\Microsoft.XboxApp*" | Remove-Item -Recurse -Force
+    Get-Item -Path "HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion\Appx\AppxAllUserStore\Applications\Microsoft.XboxGameOverlay*" | Remove-Item -Recurse -Force
+    Get-Item -Path "HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion\Appx\AppxAllUserStore\Applications\Microsoft.XboxGamingOverlay*" | Remove-Item -Recurse -Force
+    Get-Item -Path "HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion\Appx\AppxAllUserStore\Applications\Microsoft.XboxIdentityProvider*" | Remove-Item -Recurse -Force
+    Get-Item -Path "HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion\Appx\AppxAllUserStore\Applications\Microsoft.XboxSpeechToTextOverlay*" | Remove-Item -Recurse -Force
+    Get-Item -Path "HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion\Appx\AppxAllUserStore\Applications\Microsoft.YourPhone*" | Remove-Item -Recurse -Force
+    Get-Item -Path "HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion\Appx\AppxAllUserStore\Applications\Microsoft.ZuneMusic*" | Remove-Item -Recurse -Force
+    Get-Item -Path "HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion\Appx\AppxAllUserStore\Applications\Microsoft.ZuneVideo*" | Remove-Item -Recurse -Force
 
-Get-AppxPackage -AllUsers -Name *BingNews* | Remove-AppxPackage
-Get-AppxPackage -AllUsers -Name *GetHelp* | Remove-AppxPackage
-Get-AppxPackage -AllUsers -Name *Getstarted* | Remove-AppxPackage
-Get-AppxPackage -AllUsers -Name *Messaging* | Remove-AppxPackage
-Get-AppxPackage -AllUsers -Name *Microsoft3DViewer* | Remove-AppxPackage
-Get-AppxPackage -AllUsers -Name *MicrosoftOfficeHub* | Remove-AppxPackage
-Get-AppxPackage -AllUsers -Name *MicrosoftSolitaireCollection* | Remove-AppxPackage
-Get-AppxPackage -AllUsers -Name *News* | Remove-AppxPackage
-Get-AppxPackage -AllUsers -Name *Office.Lens* | Remove-AppxPackage
-Get-AppxPackage -AllUsers -Name *Office.OneNote* | Remove-AppxPackage
-Get-AppxPackage -AllUsers -Name *Office.Sway* | Remove-AppxPackage
-Get-AppxPackage -AllUsers -Name *OneConnect* | Remove-AppxPackage
-Get-AppxPackage -AllUsers -Name *Print3D* | Remove-AppxPackage
-Get-AppxPackage -AllUsers -Name *SkypeApp* | Remove-AppxPackage
-Get-AppxPackage -AllUsers -Name *Office.Todo.List* | Remove-AppxPackage
-Get-AppxPackage -AllUsers -Name *Whiteboard* | Remove-AppxPackage
-Get-AppxPackage -AllUsers -Name *WindowsAlarms* | Remove-AppxPackage
-Get-AppxPackage -AllUsers -Name *WindowsCamera* | Remove-AppxPackage
-Get-AppxPackage -AllUsers -Name *windowscommunicationsapps* | Remove-AppxPackage
-Get-AppxPackage -AllUsers -Name *WindowsFeedbackHub* | Remove-AppxPackage
-Get-AppxPackage -AllUsers -Name *WindowsMaps* | Remove-AppxPackage
-Get-AppxPackage -AllUsers -Name *WindowsSoundRecorder* | Remove-AppxPackage
-Get-AppxPackage -AllUsers -Name *XboxApp* | Remove-AppxPackage
-Get-AppxPackage -AllUsers -Name *XboxGameOverlay* | Remove-AppxPackage
-Get-AppxPackage -AllUsers -Name *XboxIdentityProvider* | Remove-AppxPackage
-Get-AppxPackage -AllUsers -Name *XboxSpeechToTextOverlay* | Remove-AppxPackage
-Get-AppxPackage -AllUsers -Name *XboxGamingOverlay* | Remove-AppxPackage
-Get-AppxPackage -AllUsers -Name *Microsoft.Xbox.TCUI* | Remove-AppxPackage
-Get-AppxPackage -AllUsers -Name *ZuneMusic* | Remove-AppxPackage
-Get-AppxPackage -AllUsers -Name *ZuneVideo* | Remove-AppxPackage 
-Get-AppxPackage -AllUsers -Name *StorePurchaseApp* | Remove-AppxPackage
-Get-AppxPackage -AllUsers -Name *Paint3D* | Remove-AppxPackage
-Get-AppxPackage -AllUsers -Name *MicrosoftStickyNotes* | Remove-AppxPackage
-Get-AppxPackage -AllUsers -Name *MixedReality.Portal * | Remove-AppxPackage
-Get-AppxPackage -AllUsers -Name *Cortana* | Remove-AppxPackage
-Get-AppxPackage -AllUsers -Name *MSPaint* | Remove-AppxPackage
-Get-AppxPackage -AllUsers -Name *YourPhone* | Remove-AppxPackage
-Get-AppxPackage -AllUsers -Name *Microsoft.People* | Remove-AppxPackage
-Get-AppxPackage -AllUsers -Name *BingWeather* | Remove-AppxPackage
-Get-AppxPackage -AllUsers -Name *Todos* | Remove-AppxPackage
-Get-AppxPackage -AllUsers -Name *WindowsAlarms* | Remove-AppxPackage
-Get-AppxPackage -AllUsers -Name *MicrosoftTeams* | Remove-AppxPackage
+    Get-AppPackage -AllUsers -Name "Microsoft.BingWeather*" | Remove-AppxPackage -AllUsers
+    Get-AppPackage -AllUsers -Name "Microsoft.GetHelp*" | Remove-AppxPackage -AllUsers
+    Get-AppPackage -AllUsers -Name "Microsoft.Getstarted*" | Remove-AppxPackage -AllUsers
+    Get-AppPackage -AllUsers -Name "Microsoft.Microsoft3DViewer*" | Remove-AppxPackage -AllUsers
+    Get-AppPackage -AllUsers -Name "Microsoft.MicrosoftOfficeHub*" | Remove-AppxPackage -AllUsers
+    Get-AppPackage -AllUsers -Name "Microsoft.MicrosoftSolitaireCollection*" | Remove-AppxPackage -AllUsers
+    #Get-AppPackage -AllUsers -Name "Microsoft.MicrosoftStickyNotes*" | Remove-AppxPackage -AllUsers
+    Get-AppPackage -AllUsers -Name "Microsoft.MixedReality.Portal*" | Remove-AppxPackage -AllUsers
+    Get-AppPackage -AllUsers -Name "Microsoft.MSPaint*" | Remove-AppxPackage -AllUsers
+    Get-AppPackage -AllUsers -Name "Microsoft.Office.OneNote*" | Remove-AppxPackage -AllUsers
+    Get-AppPackage -AllUsers -Name "Microsoft.People*" | Remove-AppxPackage -AllUsers
+    Get-AppPackage -AllUsers -Name "Microsoft.ScreenSketch*" | Remove-AppxPackage -AllUsers
+    Get-AppPackage -AllUsers -Name "Microsoft.SkypeApp*" | Remove-AppxPackage -AllUsers
+    Get-AppPackage -AllUsers -Name "Microsoft.StorePurchaseApp*" | Remove-AppxPackage -AllUsers
+    Get-AppPackage -AllUsers -Name "Microsoft.Wallet*" | Remove-AppxPackage -AllUsers
+    Get-AppPackage -AllUsers -Name "Microsoft.WindowsAlarms*" | Remove-AppxPackage -AllUsers
+    Get-AppPackage -AllUsers -Name "Microsoft.WindowsCamera*" | Remove-AppxPackage -AllUsers
+    Get-AppPackage -AllUsers -Name "microsoft.windowscommunicationsapps*" | Remove-AppxPackage -AllUsers
+    Get-AppPackage -AllUsers -Name "Microsoft.WindowsFeedbackHub*" | Remove-AppxPackage -AllUsers
+    Get-AppPackage -AllUsers -Name "Microsoft.WindowsMaps*" | Remove-AppxPackage -AllUsers
+    Get-AppPackage -AllUsers -Name "Microsoft.WindowsSoundRecorder*" | Remove-AppxPackage -AllUsers
+    Get-AppPackage -AllUsers -Name "Microsoft.Xbox.TCUI*" | Remove-AppxPackage -AllUsers
+    Get-AppPackage -AllUsers -Name "Microsoft.XboxApp*" | Remove-AppxPackage -AllUsers
+    Get-AppPackage -AllUsers -Name "Microsoft.XboxGameOverlay*" | Remove-AppxPackage -AllUsers
+    Get-AppPackage -AllUsers -Name "Microsoft.XboxGamingOverlay*" | Remove-AppxPackage -AllUsers
+    Get-AppPackage -AllUsers -Name "Microsoft.XboxIdentityProvider*" | Remove-AppxPackage -AllUsers
+    Get-AppPackage -AllUsers -Name "Microsoft.XboxSpeechToTextOverlay*" | Remove-AppxPackage -AllUsers
+    Get-AppPackage -AllUsers -Name "Microsoft.YourPhone*" | Remove-AppxPackage -AllUsers
+    Get-AppPackage -AllUsers -Name "Microsoft.ZuneMusic*" | Remove-AppxPackage -AllUsers
+    Get-AppPackage -AllUsers -Name "Microsoft.ZuneVideo*" | Remove-AppxPackage -AllUsers
 
-
-Write-Host "GOTOWE!" -BackgroundColor DarkBlue -ForegroundColor White
+    (Get-AppPackage -AllUsers).Name | Out-GridView
+}
+Remove-Bloatware
 pause
-
