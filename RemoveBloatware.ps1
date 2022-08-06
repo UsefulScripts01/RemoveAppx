@@ -62,3 +62,4 @@ function Remove-Bloatware {
     (Get-AppxPackage -AllUsers).Name | Out-GridView
 }
 Remove-Bloatware
+pause
