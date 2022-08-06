@@ -87,6 +87,7 @@ function Remove-Bloatware {
     Get-AppxPackage -AllUsers -Name "Microsoft.Todos*" | Remove-AppxPackage -AllUsers
     Get-AppxPackage -AllUsers -Name "Microsoft.ParentalControl*" | Remove-AppxPackage -AllUsers
 
+    # list of installed APPX
     (Get-AppxPackage -AllUsers).Name | Out-GridView
 
     # simple error log
