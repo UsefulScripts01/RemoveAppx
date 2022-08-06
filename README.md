@@ -4,13 +4,17 @@
 Remove all APPX bloatware from the operating system.
 
 ## Description
-    This script removes all useless APPX applications from the operating system.
-    USAGE
-    - Download RemoveBloatware.ps1 and StartScript.bat to the same location.
-    - Run the StartScript.bat file as Administrator (context menu)
-    
-    APPX applications can be restored with the command below:
-    Get-AppxPackage -AllUsers "Microsoft.GetHelp*" | ForEach {Add-AppxPackage -DisableDevelopmentMode -Register "$($_.InstallLocation)\AppXManifest.xml"}
+
+This script removes all useless APPX applications from the operating system.
+USAGE
+- Download RemoveBloatware.ps1 and StartScript.bat to the same location.
+- Run the StartScript.bat file as Administrator (context menu)
+
+APPX applications can be restored with the command below:
+
+```powershell
+Get-AppxPackage -AllUsers "Microsoft.GetHelp*" | ForEach {Add-AppxPackage -DisableDevelopmentMode -Register "$($_.InstallLocation)\AppXManifest.xml"}
+```
 
 ## Usage
 
