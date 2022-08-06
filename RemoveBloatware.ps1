@@ -1,3 +1,25 @@
+<#
+    .SYNOPSIS
+        Remove all APPX bloatware from the operating system.
+
+    .DESCRIPTION
+        This script removes all useless APPX applications from the operating system.
+        
+        USAGE
+            - Download RemoveBloatware.ps1 and StartScript.bat to the same location.
+            - Run the StartScript.bat file as Administrator (context menu)
+
+        You can restore APPX applications with the command below:
+            Get-AppxPackage -AllUsers "Microsoft.GetHelp*" | ForEach {Add-AppxPackage -DisableDevelopmentMode -Register "$($_.InstallLocation)\AppXManifest.xml"}
+
+    .EXAMPLE
+
+    .NOTES
+
+    .LINK
+
+#>
+
 function Remove-Bloatware {
     Get-Item -Path "HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion\Appx\AppxAllUserStore\Applications\Microsoft.BingWeather*" | Remove-Item -Recurse -Force
     Get-Item -Path "HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion\Appx\AppxAllUserStore\Applications\Microsoft.GetHelp*" | Remove-Item -Recurse -Force
@@ -28,6 +50,8 @@ function Remove-Bloatware {
     Get-Item -Path "HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion\Appx\AppxAllUserStore\Applications\Microsoft.YourPhone*" | Remove-Item -Recurse -Force
     Get-Item -Path "HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion\Appx\AppxAllUserStore\Applications\Microsoft.ZuneMusic*" | Remove-Item -Recurse -Force
     Get-Item -Path "HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion\Appx\AppxAllUserStore\Applications\Microsoft.ZuneVideo*" | Remove-Item -Recurse -Force
+    Get-Item -Path "HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion\Appx\AppxAllUserStore\Applications\Microsoft.Todos*" | Remove-Item -Recurse -Force
+    Get-Item -Path "HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion\Appx\AppxAllUserStore\Applications\Microsoft.ParentalControl*" | Remove-Item -Recurse -Force
 
     Get-AppxPackage -AllUsers -Name "Microsoft.BingWeather*" | Remove-AppxPackage -AllUsers
     Get-AppxPackage -AllUsers -Name "Microsoft.GetHelp*" | Remove-AppxPackage -AllUsers
@@ -58,6 +82,8 @@ function Remove-Bloatware {
     Get-AppxPackage -AllUsers -Name "Microsoft.YourPhone*" | Remove-AppxPackage -AllUsers
     Get-AppxPackage -AllUsers -Name "Microsoft.ZuneMusic*" | Remove-AppxPackage -AllUsers
     Get-AppxPackage -AllUsers -Name "Microsoft.ZuneVideo*" | Remove-AppxPackage -AllUsers
+    Get-AppxPackage -AllUsers -Name "Microsoft.Todos*" | Remove-AppxPackage -AllUsers
+    Get-AppxPackage -AllUsers -Name "Microsoft.ParentalControl*" | Remove-AppxPackage -AllUsers
 
     (Get-AppxPackage -AllUsers).Name | Out-GridView
 }
