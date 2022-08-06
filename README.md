@@ -7,36 +7,36 @@ This script removes all useless APPX applications from the operating system.
 List of deleted applications
 
 ```
-Microsoft.BingWeather
-Microsoft.GetHelp
-Microsoft.Getstarted
-Microsoft.Microsoft3DViewer
-Microsoft.MicrosoftOfficeHub
-Microsoft.MicrosoftSolitaireCollection
-Microsoft.MixedReality.Portal
-Microsoft.MSPaint
-Microsoft.Office.OneNote
-Microsoft.People
-Microsoft.SkypeApp
-Microsoft.StorePurchaseApp
-Microsoft.Wallet
-Microsoft.WindowsAlarms
-Microsoft.WindowsCamera
-microsoft.windowscommunicationsapps
-Microsoft.WindowsFeedbackHub
-Microsoft.WindowsMaps
-Microsoft.WindowsSoundRecorder
-Microsoft.Xbox.TCUI
-Microsoft.XboxApp
-Microsoft.XboxGameOverlay
-Microsoft.XboxGamingOverlay
-Microsoft.XboxIdentityProvider
-Microsoft.XboxSpeechToTextOverlay
-Microsoft.YourPhone
-Microsoft.ZuneMusic
-Microsoft.ZuneVideo
-Microsoft.Todos
-Microsoft.ParentalControl
+BingWeather
+GetHelp
+Getstarted
+Microsoft3DViewer
+MicrosoftOfficeHub
+MicrosoftSolitaireCollection
+MixedReality.Portal
+MSPaint
+Office.OneNote
+People
+SkypeApp
+StorePurchaseApp
+Wallet
+WindowsAlarms
+WindowsCamera
+windowscommunicationsapps
+WindowsFeedbackHub
+WindowsMaps
+WindowsSoundRecorder
+Xbox.TCUI
+XboxApp
+XboxGameOverlay
+XboxGamingOverlay
+XboxIdentityProvider
+XboxSpeechToTextOverlay
+YourPhone
+ZuneMusic
+ZuneVideo
+Todos
+ParentalControl
 ```
 
 ## Usage
@@ -57,5 +57,5 @@ Set-ExecutionPolicy Bypass -Scope Process -Force; [System.Net.ServicePointManage
 All APPX applications can be restored with the command below:
 
 ```powershell
-Get-AppxPackage -AllUsers "Microsoft.GetHelp*" | ForEach {Add-AppxPackage -DisableDevelopmentMode -Register "$($_.InstallLocation)\AppXManifest.xml"}
+Get-AppxPackage -AllUsers "GetHelp*" | ForEach {Add-AppxPackage -DisableDevelopmentMode -Register "$($_.InstallLocation)\AppXManifest.xml"}
 ```
