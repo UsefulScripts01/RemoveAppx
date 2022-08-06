@@ -40,7 +40,6 @@ function Remove-Bloatware {
     Get-AppxPackage -AllUsers -Name "Microsoft.MSPaint*" | Remove-AppxPackage -AllUsers
     Get-AppxPackage -AllUsers -Name "Microsoft.Office.OneNote*" | Remove-AppxPackage -AllUsers
     Get-AppxPackage -AllUsers -Name "Microsoft.People*" | Remove-AppxPackage -AllUsers
-    Get-AppxPackage -AllUsers -Name "Microsoft.ScreenSketch*" | Remove-AppxPackage -AllUsers
     Get-AppxPackage -AllUsers -Name "Microsoft.SkypeApp*" | Remove-AppxPackage -AllUsers
     Get-AppxPackage -AllUsers -Name "Microsoft.StorePurchaseApp*" | Remove-AppxPackage -AllUsers
     Get-AppxPackage -AllUsers -Name "Microsoft.Wallet*" | Remove-AppxPackage -AllUsers
@@ -63,4 +62,3 @@ function Remove-Bloatware {
     (Get-AppxPackage -AllUsers).Name | Out-GridView
 }
 Remove-Bloatware
-pause
