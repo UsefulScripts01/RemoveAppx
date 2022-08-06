@@ -86,6 +86,12 @@ function Remove-Bloatware {
     Get-AppxPackage -AllUsers -Name "Microsoft.ParentalControl*" | Remove-AppxPackage -AllUsers
 
     (Get-AppxPackage -AllUsers).Name | Out-GridView
+
+    # simple error log
+    if ($Error.Count -ge "1" ) {
+        $DateTime = Get-Date -Format "dd.MM.yyyy HH:mm"
+        Add-Content -Value "$DateTime - $env:computername - $Error" -Path "~\desktop\RemoveBloatware-ErrorLog.log" -Force
+    }
 }
 Remove-Bloatware
 pause
