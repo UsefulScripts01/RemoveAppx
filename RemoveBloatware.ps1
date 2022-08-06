@@ -21,6 +21,7 @@
 #>
 
 function Remove-Bloatware {
+    # delete APPX manifest from the registry
     Get-Item -Path "HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion\Appx\AppxAllUserStore\Applications\Microsoft.BingWeather*" | Remove-Item -Recurse -Force
     Get-Item -Path "HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion\Appx\AppxAllUserStore\Applications\Microsoft.GetHelp*" | Remove-Item -Recurse -Force
     Get-Item -Path "HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion\Appx\AppxAllUserStore\Applications\Microsoft.Getstarted*" | Remove-Item -Recurse -Force
@@ -53,6 +54,7 @@ function Remove-Bloatware {
     Get-Item -Path "HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion\Appx\AppxAllUserStore\Applications\Microsoft.Todos*" | Remove-Item -Recurse -Force
     Get-Item -Path "HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion\Appx\AppxAllUserStore\Applications\Microsoft.ParentalControl*" | Remove-Item -Recurse -Force
 
+    # delete biult-in Apps
     Get-AppxPackage -AllUsers -Name "Microsoft.BingWeather*" | Remove-AppxPackage -AllUsers
     Get-AppxPackage -AllUsers -Name "Microsoft.GetHelp*" | Remove-AppxPackage -AllUsers
     Get-AppxPackage -AllUsers -Name "Microsoft.Getstarted*" | Remove-AppxPackage -AllUsers
