@@ -53,7 +53,8 @@ function Remove-Bloatware {
         "Microsoft.ZuneMusic",
         "Microsoft.ZuneVideo",
         "Microsoft.Todos",
-        "Microsoft.ParentalControl*"
+        "Microsoft.ParentalControl",
+        "Microsoft.Teams"
     )
 
     # delete APPX manifest from the registry
