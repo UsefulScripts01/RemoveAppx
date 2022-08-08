@@ -20,7 +20,8 @@
 
 #>
 
-function Remove-Bloatware {
+function Remove-Bloatware
+{
 
     $AppList = @(
         "Microsoft.BingWeather"
@@ -58,12 +59,14 @@ function Remove-Bloatware {
     )
 
     # delete APPX manifest from the registry
-    ForEach ($Registry in $AppList) {
+    ForEach ($Registry in $AppList)
+    {
         Get-Item -Path "HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion\Appx\AppxAllUserStore\Applications\$Registry*" | Remove-Item -Recurse -Force
     }
 
     # delete biult-in Apps
-    ForEach ($Appx in $AppList) {
+    ForEach ($Appx in $AppList)
+    {
         Get-AppxPackage -AllUsers -Name "$Appx*" | Remove-AppxPackage -AllUsers
     }
 
@@ -71,7 +74,8 @@ function Remove-Bloatware {
     (Get-AppxPackage -AllUsers).Name | Out-GridView
 
     # simple error log
-    if ($Error.Count -ge "1" ) {
+    if ($Error.Count -ge "1" )
+    {
         $DateTime = Get-Date -Format "dd.MM.yyyy HH:mm"
         Add-Content -Value "$DateTime - $env:computername - $Error" -Path "~\desktop\RemoveBloatware-ErrorLog.log" -Force
     }
