@@ -23,37 +23,37 @@
 function Remove-Bloatware {
 
     $AppList = @(  
-        "Microsoft.BingWeather",
-        "Microsoft.GetHelp",
-        "Microsoft.Getstarted",
-        "Microsoft.Microsoft3DViewer",
-        "Microsoft.MicrosoftOfficeHub",
-        "Microsoft.MicrosoftSolitaireCollection",
+        "Microsoft.BingWeather"
+        "Microsoft.GetHelp"
+        "Microsoft.Getstarted"
+        "Microsoft.Microsoft3DViewer"
+        "Microsoft.MicrosoftOfficeHub"
+        "Microsoft.MicrosoftSolitaireCollection"
         #"Microsoft.MicrosoftStickyNotes",
-        "Microsoft.MixedReality.Portal",
-        "Microsoft.MSPaint",
-        "Microsoft.Office.OneNote",
-        "Microsoft.People",
-        "Microsoft.SkypeApp",
-        "Microsoft.StorePurchaseApp",
-        "Microsoft.Wallet",
-        "Microsoft.WindowsAlarms",
-        "Microsoft.WindowsCamera",
-        "microsoft.windowscommunicationsapps",
-        "Microsoft.WindowsFeedbackHub",
-        "Microsoft.WindowsMaps",
-        "Microsoft.WindowsSoundRecorder",
-        "Microsoft.Xbox.TCUI",
-        "Microsoft.XboxApp",
-        "Microsoft.XboxGameOverlay",
-        "Microsoft.XboxGamingOverlay",
-        "Microsoft.XboxIdentityProvider",
-        "Microsoft.XboxSpeechToTextOverlay",
-        "Microsoft.YourPhone",
-        "Microsoft.ZuneMusic",
-        "Microsoft.ZuneVideo",
-        "Microsoft.Todos",
-        "Microsoft.ParentalControl",
+        "Microsoft.MixedReality.Portal"
+        "Microsoft.MSPaint"
+        "Microsoft.Office.OneNote"
+        "Microsoft.People"
+        "Microsoft.SkypeApp"
+        "Microsoft.StorePurchaseApp"
+        "Microsoft.Wallet"
+        "Microsoft.WindowsAlarms"
+        "Microsoft.WindowsCamera"
+        "microsoft.windowscommunicationsapps"
+        "Microsoft.WindowsFeedbackHub"
+        "Microsoft.WindowsMaps"
+        "Microsoft.WindowsSoundRecorder"
+        "Microsoft.Xbox.TCUI"
+        "Microsoft.XboxApp"
+        "Microsoft.XboxGameOverlay"
+        "Microsoft.XboxGamingOverlay"
+        "Microsoft.XboxIdentityProvider"
+        "Microsoft.XboxSpeechToTextOverlay"
+        "Microsoft.YourPhone"
+        "Microsoft.ZuneMusic"
+        "Microsoft.ZuneVideo"
+        "Microsoft.Todos"
+        "Microsoft.ParentalControl"
         "Microsoft.Teams"
     )
 
