@@ -22,7 +22,7 @@
 
 function Remove-Bloatware {
 
-    $AppList = @(  
+    $AppList = @(
         "Microsoft.BingWeather"
         "Microsoft.GetHelp"
         "Microsoft.Getstarted"
@@ -61,7 +61,7 @@ function Remove-Bloatware {
     ForEach ($Registry in $AppList) {
         Get-Item -Path "HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion\Appx\AppxAllUserStore\Applications\$Registry*" | Remove-Item -Recurse -Force
     }
-   
+
     # delete biult-in Apps
     ForEach ($Appx in $AppList) {
         Get-AppxPackage -AllUsers -Name "$Appx*" | Remove-AppxPackage -AllUsers
