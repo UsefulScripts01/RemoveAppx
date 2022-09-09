@@ -64,7 +64,7 @@ function Remove-Bloatware {
 
     # delete biult-in Apps
     ForEach ($Appx in $AppList) {
-        Get-AppxPackage -AllUsers -Name "$Appx*" | Remove-AppxPackage -AllUsers
+        Get-AppxPackage -AllUsers -Name $Appx | Remove-AppxPackage -AllUsers
     }
 
     # list of installed APPX
