@@ -10,7 +10,7 @@
     - Run the StartScript.bat file as Administrator (context menu)
 
     You can restore APPX applications with the command below:
-    Get-AppxPackage -AllUsers "Microsoft.GetHelp*" | ForEach {Add-AppxPackage -DisableDevelopmentMode -Register "$($_.InstallLocation)\AppXManifest.xml"}
+    Get-AppxPackage -AllUsers "*GetHelp*" | ForEach {Add-AppxPackage -DisableDevelopmentMode -Register "$($_.InstallLocation)\AppXManifest.xml"}
 
     .EXAMPLE
 
@@ -23,38 +23,36 @@
 function Remove-Bloatware {
 
     $AppList = @(
-        "Microsoft.BingWeather"
-        "Microsoft.GetHelp"
-        "Microsoft.Getstarted"
-        "Microsoft.Microsoft3DViewer"
-        "Microsoft.MicrosoftOfficeHub"
-        "Microsoft.MicrosoftSolitaireCollection"
-        #"Microsoft.MicrosoftStickyNotes",
-        "Microsoft.MixedReality.Portal"
-        "Microsoft.MSPaint"
-        "Microsoft.Office.OneNote"
-        "Microsoft.People"
-        "Microsoft.SkypeApp"
-        "Microsoft.StorePurchaseApp"
-        "Microsoft.Wallet"
-        "Microsoft.WindowsAlarms"
-        "Microsoft.WindowsCamera"
-        "microsoft.windowscommunicationsapps"
-        "Microsoft.WindowsFeedbackHub"
-        "Microsoft.WindowsMaps"
-        "Microsoft.WindowsSoundRecorder"
-        "Microsoft.Xbox.TCUI"
-        "Microsoft.XboxApp"
-        "Microsoft.XboxGameOverlay"
-        "Microsoft.XboxGamingOverlay"
-        "Microsoft.XboxIdentityProvider"
-        "Microsoft.XboxSpeechToTextOverlay"
-        "Microsoft.YourPhone"
-        "Microsoft.ZuneMusic"
-        "Microsoft.ZuneVideo"
-        "Microsoft.Todos"
-        "Microsoft.ParentalControl"
-        "Microsoft.Teams"
+        "*BingWeather*"
+        "*GetHelp*"
+        "*Getstarted*"
+        "*3DViewer*"
+        "*OfficeHub*"
+        "*SolitaireCollection*"
+        "*StickyNotes*"
+        "*MixedReality*"
+        "*MSPaint*"
+        "*Office.OneNote*"
+        "*SkypeApp*"
+        "*StorePurchaseApp*"
+        "*Wallet*"
+        "*WindowsAlarms*"
+        "*WindowsCamera*"
+        "*windowscommunicationsapps*"
+        "*WindowsFeedbackHub*"
+        "*WindowsMaps*"
+        "*WindowsSoundRecorder*"
+        "*Xbox.TCUI*"
+        "*XboxApp*"
+        "*XboxGameOverlay*"
+        "*XboxGamingOverlay*"
+        "*XboxIdentityProvider*"
+        "*XboxSpeechToTextOverlay*"
+        "*YourPhone*"
+        "*ZuneMusic*"
+        "*ZuneVideo*"
+        "*Todos*"
+        "*Teams*"
     )
 
     # delete APPX manifest from the registry
