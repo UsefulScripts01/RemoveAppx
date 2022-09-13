@@ -1,3 +1,5 @@
+
+function Remove-Bloatware {
 <#
     .SYNOPSIS
     Remove all APPX bloatware from the operating system.
@@ -19,8 +21,6 @@
     .LINK
 
 #>
-
-function Remove-Bloatware {
 
     $AppList = @(
         "*BingWeather*"
