@@ -1,6 +1,6 @@
 
 function Remove-Bloatware {
-<#
+    <#
     .SYNOPSIS
     Remove all APPX bloatware from the operating system.
 
@@ -20,7 +20,7 @@ function Remove-Bloatware {
 
     .LINK
 
-#>
+    #>
 
     $AppList = @(
         "*BingWeather*"
@@ -68,10 +68,12 @@ function Remove-Bloatware {
     # list of installed APPX
     (Get-AppxPackage -AllUsers).Name | Out-GridView
 
-    # simple error log
-    if ($Error.Count -ge "1" ) {
+    # Save error log
+    if (!$Error.Count.Equals(0)) {
         $DateTime = Get-Date -Format "dd.MM.yyyy HH:mm"
-        Add-Content -Value "$DateTime - $env:computername - $Error" -Path "~\desktop\RemoveBloatware-ErrorLog.log" -Force
+        foreach ($Entry in $Error) {
+            Add-Content -Value "$DateTime - $env:computername - $Entry" -Path "~\Desktop\ErrorLog.log" -Force
+        }
     }
 }
 
