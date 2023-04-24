@@ -64,9 +64,6 @@ function Remove-Bloatware {
         Get-AppxPackage -AllUsers -Name $Appx | Remove-AppxPackage -AllUsers
     }
 
-    # list of installed APPX
-    (Get-AppxPackage -AllUsers).Name | Out-GridView
-
     # Save error log
     if (!$Error.Count.Equals(0)) {
         $DateTime = Get-Date -Format "dd.MM.yyyy HH:mm"
