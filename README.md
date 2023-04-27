@@ -8,18 +8,17 @@ List of deleted applications
 
 ```
 BingWeather
-GetHelp
-Getstarted
 Microsoft3DViewer
-MicrosoftOfficeHub
 MicrosoftSolitaireCollection
 MixedReality.Portal
 MSPaint
 Office.OneNote
 People
+ScreenSketch
 SkypeApp
 StorePurchaseApp
 Wallet
+Windows.Photos
 WindowsAlarms
 WindowsCamera
 windowscommunicationsapps
@@ -35,8 +34,6 @@ XboxSpeechToTextOverlay
 YourPhone
 ZuneMusic
 ZuneVideo
-Todos
-ParentalControl
 ```
 
 ### Usage
