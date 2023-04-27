@@ -10,6 +10,7 @@ List of deleted applications
 BingWeather
 Microsoft3DViewer
 MicrosoftSolitaireCollection
+MicrosoftStickyNotes
 MixedReality.Portal
 MSPaint
 Office.OneNote
