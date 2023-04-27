@@ -32,7 +32,6 @@ function Remove-Appx {
         "Microsoft.XboxSpeechToTextOverlay*"
         "Microsoft.YourPhone*"
         "Microsoft.ZuneMusic*"
-        "Microsoft.ZuneMusic*"
         "Microsoft.ZuneVideo*"
     )
 
