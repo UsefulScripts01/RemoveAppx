@@ -83,4 +83,3 @@ function Remove-Bloatware {
 }
 
 Remove-Bloatware
-Pause
