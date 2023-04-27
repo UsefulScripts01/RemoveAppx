@@ -54,11 +54,6 @@ function Remove-Bloatware {
         "Microsoft.ZuneVideo*"
     )
     
-    # delete APPX manifest from the registry
-    ForEach ($Registry in $AppList) {
-        Get-Item -Path "HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion\Appx\AppxAllUserStore\Applications\$Registry*" | Remove-Item -Recurse -Force
-    }
-
     # delete biult-in Apps
     ForEach ($Appx in $AppList) {
         Get-AppxPackage -AllUsers -Name $Appx | Remove-AppxPackage -AllUsers
