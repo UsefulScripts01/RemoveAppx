@@ -54,9 +54,15 @@ function Remove-Bloatware {
         "Microsoft.ZuneVideo*"
     )
     
+    <# delete APPX manifest from the registry
+    ForEach ($Registry in $AppList) {
+        Get-Item -Path "HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion\Appx\AppxAllUserStore\Applications\$Registry*" | Remove-Item -Recurse -Force
+    } #>
+
     # delete biult-in Apps
     ForEach ($Appx in $AppList) {
         try {
+            Get-Item -Path "HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion\Appx\AppxAllUserStore\Applications\$Appx*" | Remove-Item -Recurse -Force
             Get-AppxPackage -AllUsers -Name $Appx | Remove-AppxPackage -AllUsers
             Write-Host "$Appx - Removed" -ForegroundColor Green
         }
@@ -66,7 +72,7 @@ function Remove-Bloatware {
 
         Get-AppxPackage -AllUsers -Name $Appx | Remove-AppxPackage -AllUsers
     }
-
+       
     # Save error log
     if (!$Error.Count.Equals(0)) {
         $DateTime = Get-Date -Format "dd.MM.yyyy HH:mm"
