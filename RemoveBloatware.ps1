@@ -74,7 +74,7 @@ function Remove-Bloatware {
     }
        
     # Save error log
-    if (!$Error.Count.Equals(0)) {
+    if ($Error.Count -ne 0) {
         $DateTime = Get-Date -Format "dd.MM.yyyy HH:mm"
         foreach ($Entry in $Error) {
             Add-Content -Value "$DateTime - $env:computername - $Entry" -Path "~\Desktop\ErrorLog.log" -Force
