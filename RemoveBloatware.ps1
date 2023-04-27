@@ -56,6 +56,14 @@ function Remove-Bloatware {
     
     # delete biult-in Apps
     ForEach ($Appx in $AppList) {
+        try {
+            Get-AppxPackage -AllUsers -Name $Appx | Remove-AppxPackage -AllUsers
+            Write-Host "$Appx - Removed" -ForegroundColor Green
+        }
+        catch {
+            Write-Host "$Appx - Failed" -ForegroundColor Red
+        }
+
         Get-AppxPackage -AllUsers -Name $Appx | Remove-AppxPackage -AllUsers
     }
 
