@@ -1,28 +1,10 @@
 
-function Remove-Bloatware {
-    <#
-    .SYNOPSIS
-    Remove all APPX bloatware from the operating system.
+function Remove-Appx {
+    param(
+        [Parameter(Mandatory = $false)] [switch]$Select
+    )
 
-    .DESCRIPTION
-    This script removes all useless APPX applications from the operating system.
-
-    USAGE
-    - Download RemoveBloatware.ps1 and StartScript.bat to the same location.
-    - Run the StartScript.bat file as Administrator (context menu)
-
-    You can restore APPX applications with the command below:
-    Get-AppxPackage -AllUsers "*GetHelp*" | ForEach {Add-AppxPackage -DisableDevelopmentMode -Register "$($_.InstallLocation)\AppXManifest.xml"}
-
-    .EXAMPLE
-
-    .NOTES
-
-    .LINK
-
-    #>
-
-    $AppList = @(
+    $All = @(
         "Microsoft.BingWeather*"
         "Microsoft.Microsoft3DViewer*"
         "Microsoft.MicrosoftSolitaireCollection*"
@@ -53,11 +35,13 @@ function Remove-Bloatware {
         "Microsoft.ZuneMusic*"
         "Microsoft.ZuneVideo*"
     )
-    
-    <# delete APPX manifest from the registry
-    ForEach ($Registry in $AppList) {
-        Get-Item -Path "HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion\Appx\AppxAllUserStore\Applications\$Registry*" | Remove-Item -Recurse -Force
-    } #>
+
+    if ($Select) {
+        $AppList = $All | Out-GridView -Title "Select Appx to remove:" -OutputMode Multiple
+    }
+    else {
+        $AppList = $All
+    }
 
     # delete biult-in Apps
     ForEach ($Appx in $AppList) {
@@ -69,8 +53,6 @@ function Remove-Bloatware {
         catch {
             Write-Host "$Appx - Failed" -ForegroundColor Red
         }
-
-        Get-AppxPackage -AllUsers -Name $Appx | Remove-AppxPackage -AllUsers
     }
        
     # Save error log
@@ -81,5 +63,4 @@ function Remove-Bloatware {
         }
     }
 }
-
-Remove-Bloatware
+Remove-Appx
