@@ -62,4 +62,4 @@ function Remove-Appx {
         }
     }
 }
-Remove-Appx
+Remove-Appx -Select
