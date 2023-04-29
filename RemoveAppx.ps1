@@ -35,6 +35,15 @@ function Remove-Appx {
         "Microsoft.ZuneVideo*"
     )
 
+    # create Temp
+    if (!(Test-Path -Path "C:\Temp")) {
+        New-Item -Path "C:\" -Name "Temp" -ItemType Directory -Force
+    }
+
+    # Backup registry keys
+    reg export HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Appx\AppxAllUserStore\Applications C:\Temp\AppxPackages.reg /y
+
+    # Select parameter
     if ($Select) {
         $AppList = $All | Out-GridView -Title "Select Appx to remove:" -OutputMode Multiple
     }
